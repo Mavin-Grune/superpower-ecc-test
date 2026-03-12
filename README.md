@@ -62,6 +62,18 @@ The plan was executed across two Claude Code sessions using the `executing-plans
 
 ![2FA Verify - Backup Code](screenshots/07-verify-backup.png)
 
+**Setup Wizard — Step 1: Scan QR Code**
+
+![Setup QR Code](screenshots/10-setup-qr.png)
+
+**Setup Wizard — Step 2: Confirm TOTP Code**
+
+![Setup Confirm](screenshots/11-setup-confirm.png)
+
+**Setup Wizard — Step 3: Save Backup Codes**
+
+![Setup Backup Codes](screenshots/12-setup-backup-codes.png)
+
 **Admin User Edit with Reset 2FA** — Orange outline button on user edit form
 
 ![Admin Reset 2FA](screenshots/08-admin-reset-button.png)
