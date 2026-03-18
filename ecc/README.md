@@ -6,13 +6,26 @@ Testing [Everything Claude Code](https://github.com/affaan-m/everything-claude-c
 
 ### Best Practice Review
 
-Ran 3 parallel ECC-powered agents to review the codebase:
+Ran 3 parallel codebase exploration agents to review the codebase. These agents performed deep file analysis — reading source files, tracing patterns, and compiling findings.
 
 | Review | Focus Areas | Duration |
 |--------|-------------|----------|
 | [Frontend Review](best-practice-review.md#frontend) | App Router, state management, performance, auth | ~90s |
 | [Backend Review](best-practice-review.md#backend) | Module organization, API design, DB patterns, validation | ~77s |
 | [Security Review](best-practice-review.md#security) | Auth, injection, CORS, secrets, file uploads, rate limiting | ~118s |
+
+### ECC Skills That Could Be Used
+
+For a more targeted review, these ECC skills can be invoked directly:
+
+| Skill | Purpose |
+|-------|---------|
+| `/everything-claude-code:coding-standards` | TypeScript/React/Node.js best practices |
+| `/everything-claude-code:frontend-patterns` | React/Next.js patterns, state management, performance |
+| `/everything-claude-code:backend-patterns` | API design, DB optimization, server-side patterns |
+| `/everything-claude-code:security-review` | OWASP top 10, auth, input validation, secrets |
+| `/everything-claude-code:api-design` | REST conventions, status codes, pagination, error responses |
+| `/everything-claude-code:postgres-patterns` | DB schema, indexing, query optimization |
 
 ### Key Findings Summary
 
@@ -33,8 +46,16 @@ Full results: [best-practice-review.md](best-practice-review.md)
 
 **Conclusion:** They complement each other — Superpower for building, ECC for validating.
 
+## Recommended Workflow
+
+**Use separately (Option B):** Build with Superpower first, then review with ECC.
+
+Auto-triggering of skills is unreliable (~20-50% activation rate by default). While Claude Code reads all skill descriptions and *can* pick them automatically, it doesn't always fire — especially when the prompt is large or multiple plugins compete for context.
+
+**To improve reliability**, add a `.claude/rules/` file that explicitly tells Claude when to use each plugin's skills. See [plugin-workflow.md](plugin-workflow.md) for a ready-to-use rule.
+
 ## Tools Used
 
 - **[Claude Code](https://docs.anthropic.com/en/docs/claude-code)** (CLI)
 - **[Everything Claude Code](https://github.com/affaan-m/everything-claude-code)** — Plugin with 100+ skills for engineering workflows
-- **Skills/agents used:** Explore agents for frontend, backend, and security review
+- **Method used:** Parallel Explore agents for deep codebase analysis (not specific ECC skills)
